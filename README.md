@@ -5,51 +5,38 @@ Este proyecto analiza datos relacionados con la huella ecológica global del añ
 ## Descripción de los Archivos
 
 - `Global Ecological Footprint 2023.csv`: Archivo CSV que contiene los datos de la huella ecológica global.
-- `modelo.py`: Script de Python que contiene la lógica para entrenar el modelo de red neuronal.
+- `main.py`: Script de Python que contiene la lógica para analizar los datos y generar resultados.
 - `nuevo.csv`: Archivo CSV que contiene dos columnas seleccionadas del conjunto de datos original: `Country` y `Region`.
 
 ## Procesamiento de Datos
 
-El script de Python realiza las siguientes operaciones en el conjunto de datos:
+El script `main.py` realiza las siguientes operaciones en el conjunto de datos:
 
-- Lee los datos del archivo CSV.
-- Convierte las columnas relevantes a valores numéricos, tratando los errores como valores `NaN`.
-- Rellena los valores `NaN` con la media de las columnas numéricas.
-- Separa los datos en características (`X`) y la etiqueta objetivo (`y`) para predecir la huella ecológica total de consumo.
-- Divide los datos en conjuntos de entrenamiento y prueba.
-- Escala las características para normalización.
-
-## Modelo de Red Neuronal
-
-El modelo de red neuronal se construye utilizando la API de Keras de TensorFlow y consiste en:
-
-- Una capa de entrada con activación `relu`.
-- Una capa oculta con 64 unidades y activación `relu`.
-- Una capa oculta con 32 unidades y activación `relu`.
-- Una capa de salida con una sola unidad para la predicción.
-
-El modelo se compila con el optimizador `adam` y la función de pérdida `mean_squared_error`. Se entrena durante 1000 épocas con un `validation_split` del 20%.
-
-## Evaluación y Predicción
-
-Después de entrenar el modelo, este se evalúa con el conjunto de prueba. Luego, se realizan predicciones sobre este mismo conjunto. Las primeras 10 predicciones se imprimen en la consola junto con los valores reales correspondientes para comparar su rendimiento.
-
-## Creación de un Nuevo CSV
-
-El script también permite seleccionar dos columnas específicas del DataFrame (`Country` y `Region`) y guardarlas en un nuevo archivo CSV llamado `nuevo.csv`.
+- Lee los datos del archivo CSV utilizando la biblioteca pandas.
+- Muestra las primeras 10 filas del DataFrame para visualizar los datos de muestra.
+- Obtiene la lista de columnas del DataFrame para conocer los nombres de las columnas.
+- Calcula el valor máximo de la columna "Number of Countries required".
+- Calcula el valor mínimo de la columna "Number of Countries required".
+- Muestra la fila que tiene el mayor valor en la columna "Number of Countries required".
+- Muestra la fila que tiene el menor valor en la columna "Number of Countries required".
+- Calcula el promedio de la columna "Number of Countries required".
+- Selecciona solo dos columnas del DataFrame ("Country" y "Region") y guarda el resultado en un nuevo DataFrame llamado "nuevo".
+- Guarda el nuevo DataFrame en un archivo CSV llamado "nuevo.csv".
 
 ## Requisitos
 
-Para ejecutar el script, es necesario tener instaladas las siguientes bibliotecas de Python:
+Para ejecutar el script `main.py`, es necesario tener instaladas las siguientes bibliotecas de Python:
 
 - pandas
 - scikit-learn
 - TensorFlow
 
+Asegúrate de tener estas bibliotecas instaladas en tu entorno de Python antes de ejecutar el código.
+
 ## Ejecución
 
-Para ejecutar el script, navega al directorio donde se encuentra el archivo `modelo.py` y ejecuta el siguiente comando en la terminal:
+Para ejecutar el script, debes proporcionar la ruta correcta del archivo CSV en la variable `archivo_csv`. 
 
-```shell
-python modelo.py
-python main.py
+Una vez que hayas configurado la ruta correcta, puedes ejecutar el script y ver los resultados en la consola. Los resultados incluirán las primeras 10 filas del DataFrame, la lista de columnas, el valor máximo y mínimo de la columna "Number of Countries required", la fila con el mayor y menor valor de esa columna, el promedio de la columna "Number of Countries required", el DataFrame "nuevo" con las columnas seleccionadas y el archivo CSV "nuevo.csv" guardado en la ubicación especificada.
+
+Recuerda asegurarte de proporcionar la ruta correcta para el archivo CSV y el archivo CSV resultante. Además, asegúrate de tener instaladas las bibliotecas pandas, scikit-learn y TensorFlow en tu entorno de Python para que el código funcione correctamente.

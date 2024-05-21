@@ -6,8 +6,7 @@ from tensorflow.keras import layers
 import numpy as np
 
 # Ruta del archivo CSV
-archivo_csv = r"C:\Users\lf.torres\Desktop\reto python\
-    Global Ecological Footprint 2023.csv"
+archivo_csv = r"C:\Users\lf.torres\Desktop\reto python\Global Ecological Footprint 2023.csv"
 
 # Leer el archivo CSV
 df = pd.read_csv(archivo_csv, encoding="latin-1")
@@ -51,7 +50,7 @@ model = keras.Sequential([
 model.compile(optimizer='adam', loss='mean_squared_error')
 
 # Entrenar el modelo
-history = model.fit(X_train_scaled, y_train, epochs=1000, validation_split=0.2)
+history = model.fit(X_train_scaled, y_train, epochs=5000, validation_split=0.2)
 
 # Evaluar el modelo
 model.evaluate(X_test_scaled, y_test)
@@ -60,5 +59,5 @@ model.evaluate(X_test_scaled, y_test)
 predictions = model.predict(X_test_scaled)
 
 # Imprimir algunas de las predicciones
-for i in range(10):  # Imprimir las primeras 10 predicciones
+for i in range(1):  # Imprimir las primeras 10 predicciones
     print(f"Predicción: {predictions[i][0]}, Valor real: {y_test.iloc[i]}")
