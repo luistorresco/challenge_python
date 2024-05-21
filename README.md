@@ -2,6 +2,9 @@
 
 Este proyecto analiza datos relacionados con la huella ecológica global del año 2023. Utilizando un conjunto de datos almacenado en un archivo CSV, el proyecto busca calcular estadísticas clave y crear un modelo de red neuronal para predecir la huella ecológica total de consumo.
 
+<img width="475" alt="Screenshot 2024-05-21 142133" src="https://github.com/luistorresco/challenge_python/assets/114264579/24487e40-b178-48a9-9bef-11e88c44d468">
+
+
 ## Descripción de los Archivos
 
 - `Global Ecological Footprint 2023.csv`: Archivo CSV que contiene los datos de la huella ecológica global.
